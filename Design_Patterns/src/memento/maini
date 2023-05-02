@@ -1,0 +1,15 @@
+import memento.Editor;
+
+public class Main {
+    public static void main(String[] args) {
+        var editor = new Editor();
+        editor.createState("a");
+        editor.createState("b");
+        editor.createState("c");
+        System.out.println(editor.getContent());
+        editor.restoreState();
+        System.out.println(editor.getContent());
+        editor.restoreState();
+        System.out.println(editor.getContent());
+    }
+}
