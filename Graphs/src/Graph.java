@@ -68,8 +68,6 @@ public class Graph {
         Set<String> set = new HashSet<>();
         depthTraversal(node,set);
     }
-
-    //depth traversal
     private void depthTraversal (Node node, Set<String> set) {
         if (adjacencyList.get(node) == null && !set.contains(node.label)) {
             System.out.println(node.label);
