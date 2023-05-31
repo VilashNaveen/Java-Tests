@@ -1,19 +1,28 @@
-import concurrency.DownloadFileTask;
 
+interface Vehicle {
+    void drive();
+}
+class Car implements Vehicle {
+
+    @Override
+    public void drive() {
+        System.out.println("Drives a car");
+    }
+}
+class MotorBike implements Vehicle {
+
+    @Override
+    public void drive() {
+        System.out.println("Drives a bike");
+    }
+}
+class car_factory {
+    Car create_car() {
+        return new Car();
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getName());
-
-        Thread thread = new Thread(new DownloadFileTask());
-        thread.start();
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        thread.interrupt();
 
     }
-
 }
